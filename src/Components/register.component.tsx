@@ -34,9 +34,9 @@ export default class Register extends Component<Props, State> {
         const { username, password, firstName, lastName } = formValue;
         this.setState({ message: "", successful: false });
 
-        AuthService.register(username, password, firstName, lastName).then(response => {
+        AuthService.register(username, password, firstName, lastName).then((response: any) => {
             this.setState({ message: response.data.message, successful: true });
-        }, error => {
+        }, (error: any) => {
             const resMessage = (error.response && error.response.data && error.response.data.message) || error.message || error.toString();
             this.setState({ successful: false, message: resMessage});
             }
