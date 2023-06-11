@@ -43,8 +43,12 @@ export default class Profile extends Component<Props, State> {
                         {currentUser.id}
                     </p>
                     <p>
-                        <strong>Email:</strong>{" "}
-                        {currentUser.email}
+                        <strong>First Name:</strong>{" "}
+                        {currentUser.firstName}
+                    </p>
+                    <p>
+                        <strong>Last Name:</strong>{" "}
+                        {currentUser.lastName}
                     </p>
                     <strong>Authorities:</strong>
                     <ul>{currentUser.roles && currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}</ul>
@@ -53,4 +57,3 @@ export default class Profile extends Component<Props, State> {
         );
     }   
 }
-
