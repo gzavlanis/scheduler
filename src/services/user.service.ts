@@ -8,13 +8,21 @@ class UserService {
         return axios.get(API_URL + 'users');
     }
 
+    getUserBoard() {
+        return axios.get(API_URL + 'user', { headers: authHeader() });
+    }
+
+    getModeratorBoard() {
+        return axios.get(API_URL + 'mod', { headers: authHeader() });
+    }
+
+    getAdminBoard() {
+        return axios.get(API_URL + 'admin', { headers: authHeader() });
+    }
+
     getUserEvents() {
         return axios.get(API_URL + 'id/users');
     }
-
-    getEventTypes() {
-        return axios.get(API_URL + 'event_types');
-    }
-}
+};
 
 export default new UserService();

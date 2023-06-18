@@ -3,7 +3,7 @@ import axios from "axios";
 const API_URL = "";
 
 class AuthService {
-    login(username: string, password: string) {
+    async login(username: string, password: string) {
         return axios.post(API_URL + "signin", { username, password }).then(response => {
             if (response.data.accessToken) localStorage.setItem("user", JSON.stringify(response.data));
             return response.data;
